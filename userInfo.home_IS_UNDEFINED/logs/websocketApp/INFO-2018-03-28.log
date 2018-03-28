@@ -1,0 +1,8 @@
+22:36:42.269 [localhost-startStop-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcher': initialization started
+22:36:42.309 [localhost-startStop-1] INFO  org.springframework.web.context.support.AnnotationConfigWebApplicationContext - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 28 22:36:42 CST 2018]; root of context hierarchy
+22:36:42.386 [localhost-startStop-1] INFO  org.springframework.web.context.support.AnnotationConfigWebApplicationContext - Registering annotated classes: [class com.github.fnpac.config.WebApplicationConfig]
+22:36:42.997 [localhost-startStop-1] INFO  org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+22:36:44.278 [localhost-startStop-1] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+22:36:44.278 [localhost-startStop-1] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+22:36:44.894 [localhost-startStop-1] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 28 22:36:42 CST 2018]; root of context hierarchy
+22:36:45.371 [localhost-startStop-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcher': initialization completed in 3097 ms
