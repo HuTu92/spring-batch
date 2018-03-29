@@ -13,6 +13,7 @@ import org.springframework.batch.core.repository.support.JobRepositoryFactoryBea
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
+import org.springframework.batch.item.validator.Validator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -94,7 +95,13 @@ public class BatchConfig {
                  */
                 .flow(step)
                 .end() // return FlowJobBuilder
+                .listener(csvJobListener())
                 .build();
+    }
+
+    @Bean
+    public CsvJobListener csvJobListener() {
+        return new CsvJobListener();
     }
 
     @Bean
@@ -133,9 +140,17 @@ public class BatchConfig {
         return null;
     }
 
+    @SuppressWarnings("unchecked")
     @Bean
     public ItemProcessor<Person, Person> processor() {
-        return null;
+        CsvItemProcessor processor = new CsvItemProcessor();
+        processor.setValidator(csvBeanValidator());
+        return processor;
+    }
+
+    @Bean
+    public Validator csvBeanValidator() {
+        return new CsvBeanValidator<Person>();
     }
 
     @Bean
