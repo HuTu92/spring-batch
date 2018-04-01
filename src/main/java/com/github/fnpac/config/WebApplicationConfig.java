@@ -24,6 +24,11 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 public class WebApplicationConfig extends WebMvcConfigurerAdapter {
 
     @Bean
+    public static PropertySourcesPlaceholderConfigurer propertyPlaceholderConfigurer() {
+        return new PropertySourcesPlaceholderConfigurer();
+    }
+
+    @Bean
     public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter() {
         return new MappingJackson2HttpMessageConverter(new JacksonObjectMapper());
     }
